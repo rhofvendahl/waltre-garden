@@ -2,22 +2,36 @@ html, body {
   height: 100%;
 }
 
-#chat-ui {
+.chat-wrap {
   position: absolute;
-  margin: 10px;
-  height: 100%;
-  width: 30%;
-  overflow-y: scroll;
+  /* height: 100%; */
+padding: 10px;
 }
-/* #waltre {
+
+.chat-w {
+}
+
+.well {
+  border-radius: 8px;
+}
+
+.chat-window {
+  width: 30%;
+  overflow-y: hidden;
+}
+
+.input-group * {
+  border-radius: 8px;
+}
+#waltre {
   position: fixed;
   margin: 16px;
   width: 20%;
   bottom: 0px;
-} */
-
+}
+/*
 #chat-input {
   position: sticky;
   margin-bottom: 0px;
   bottom: 0px;
-}
+} */
