@@ -95,7 +95,7 @@ export function MaplePart(parentPart, type) {
     this.tweenRunning = false;
 
   } else if (this.level === 1) {
-    material = Geometry.branchMatTex;
+    material = Geometry.branchMat;
     geometry = Geometry.branch;
     this.budGrowth = 7;
     this.numChildren = 5;
@@ -108,7 +108,7 @@ export function MaplePart(parentPart, type) {
     this.childParts.push(new MaplePart(this, "leaf"));
   } else if (this.level < 6) {
 
-    material = Geometry.branchMatTex;
+    material = Geometry.branchMat;
     geometry = Geometry.branch;
     this.budGrowth = 7;
     this.numChildren = 5;
@@ -123,7 +123,7 @@ export function MaplePart(parentPart, type) {
     this.childParts.push(new MaplePart(this, "leaf"));
   } else if (this.level === 6) {
 
-    material = Geometry.branchMatTex;
+    material = Geometry.branchMat;
     geometry = Geometry.branch;
     this.budGrowth = 6;
     this.numChildren = 5;
