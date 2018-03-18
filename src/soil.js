@@ -30,7 +30,6 @@ export function Soil() {
 
   this.group = new THREE.Group();
   this.stoneMoss = new THREE.Group();
-
   this.group.add(this.stoneMoss);
 
   var bottomGeometry = new THREE.LatheGeometry( bottomPoints, 6 );
