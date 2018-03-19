@@ -50,12 +50,12 @@ export function Soil() {
   //   var geometry = new THREE.BoxGeometry(size, size, size);
   //   var x = 1 + Math.random() * 6;
   //   geometry.translate(x, 0, 0);
-    // var clod = new THREE.Mesh(geometry, material);
-    // clod.position.y = -3*(1+Math.cos(Math.PI/10*x))*Math.random() - .5;
-    // clod.quaternion.setFromEuler(rotateAndTilt(Math.random() * 90, Math.random() * 360));
-    // this.group.add(clod);
-    //clod.castShadow = true;
-    // clod.receiveShadow = true;
+  // var clod = new THREE.Mesh(geometry, material);
+  // clod.position.y = -3*(1+Math.cos(Math.PI/10*x))*Math.random() - .5;
+  // clod.quaternion.setFromEuler(rotateAndTilt(Math.random() * 90, Math.random() * 360));
+  // this.group.add(clod);
+  //clod.castShadow = true;
+  // clod.receiveShadow = true;
 
   // }
 

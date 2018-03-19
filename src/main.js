@@ -4,7 +4,6 @@ var OrbitControls = require('three-orbit-controls')(THREE);
 import * as TWEEN from 'tween.js';
 import { MaplePart} from './maple';
 import { Soil } from './soil';
-import { RootPart } from './roots';
 import { Time } from './time';
 import { Waltre } from './waltre';
 
@@ -22,8 +21,8 @@ $(document).ready(function() {
   document.body.appendChild( renderer.domElement);
 
   var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 1.3, 5);
-  camera.lookAt(new THREE.Vector3(0, 5, 0));
+  camera.position.set(0, 1.3, 4);
+  // camera.lookAt(0, 8, 0);
 
   var scene = new THREE.Scene();
   scene.background = new THREE.Color( 0xdbf4ff );
@@ -45,49 +44,49 @@ $(document).ready(function() {
   var maple7 = new MaplePart(undefined, "trunk");
 
 
-//medium center
+  //medium center
   maple2.group.position.x = -1;
   maple2.group.position.y = -.2;
   maple2.group.position.z = -2;
   maple2.group.scale.set(4,5,4);
   scene.add(maple2.group);
 
-//small farback
+  //small farback
   maple3.group.position.x = 2;
   maple3.group.position.y = -.5;
   maple3.group.position.z = -7;
   maple3.group.scale.set(3,4,3);
   scene.add(maple3.group);
 
-//medium backright
+  //medium backright
   maple4.group.position.x = 2.6;
   maple4.group.position.y = -.5;
   maple4.group.position.z = -3.3;
   maple4.group.scale.set(3,4,3);
   scene.add(maple4.group);
 
-//medium back center
+  //medium back center
   maple7.group.position.x = -2;
   maple7.group.position.y = -.5;
   maple7.group.position.z = -5;
   maple7.group.scale.set(4,5,4);
   scene.add(maple7.group);
 
-//small left
+  //small left
   maple1.group.position.x = -4;
   maple1.group.position.y = -.5;
   maple1.group.position.z = -4;
   maple1.group.scale.set(3,4,3);
   scene.add(maple1.group);
 
-//small back left
+  //small back left
   maple5.group.position.x = -4;
   maple5.group.position.y = -.5;
   maple5.group.position.z = -6;
   maple5.group.scale.set(2.5,3,2.5);
   scene.add(maple5.group);
 
-//small back right
+  //small back right
   maple6.group.position.x = 4;
   maple6.group.position.y = -.5;
   maple6.group.position.z = -6;
