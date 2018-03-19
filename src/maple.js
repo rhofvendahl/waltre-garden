@@ -101,7 +101,7 @@ export function MaplePart(parentPart, type) {
     this.numChildren = 5;
     this.minAngle = 20;
     this.maxAngle = 60;
-    this.lengthFactor = .48;
+    this.lengthFactor = .4;
     this.widthFactor = .33;
     this.childParts.push(new MaplePart(this, undefined));
     this.childParts.push(new MaplePart(this, "leaf"));
@@ -188,7 +188,7 @@ MaplePart.prototype.update = function(time) {
   } else {
     this.mesh.scale.set(growthFactor * this.widthFactor, growthFactor * this.lengthFactor, growthFactor * this.widthFactor);
 
-    while (this.growth > this.budGrowth && this.childParts.length < this.numChildren && this.level < 6) {
+    while (this.growth > this.budGrowth && this.childParts.length < this.numChildren && this.level < 5) {
       this.childParts.push(new MaplePart(this, undefined));
     }
 

@@ -1,22 +1,27 @@
 html, body {
   height: 100%;
-}
-
-.chat-wrap {
-  position: absolute;
-  /* height: 100%; */
-padding: 10px;
+  overflow: hidden;
 }
 
 .chat-w {
+  border-color: #d4a87b;
+  background-color: #faf4eb;
+}
+
+.chat-u {
+  border-color: #2966a3;
+  background-color: #f5faff;
 }
 
 .well {
   border-radius: 8px;
+  border-width: 2px;
 }
 
-.chat-window {
+.chat-ui {
+  position: absolute;
   width: 30%;
+  padding: 10px;
   overflow-y: hidden;
 }
 

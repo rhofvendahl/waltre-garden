@@ -14,14 +14,14 @@ export function Soil() {
     bottomPoints.push(new THREE.Vector2(i, -2*(1+Math.cos(Math.PI/10*i))));
   }
 
-  var topGeometry = new THREE.LatheGeometry( topPoints, 6);
-  var topMaterial = new THREE.MeshLambertMaterial( { color: 0x344b37 } );
+  var topGeometry = new THREE.LatheGeometry( topPoints, 32);
+  var topMaterial = new THREE.MeshLambertMaterial( {color: 0x344b37} );
 
   this.top = new THREE.Mesh( topGeometry, topMaterial );
   this.top.castShadow = true;
   this.top.receiveShadow = true;
 
-  var rimGeometry = new THREE.TorusGeometry(10, .5, 16, 6);
+  var rimGeometry = new THREE.TorusGeometry(10, .5, 16, 32);
 
   this.rim = new THREE.Mesh(rimGeometry, topMaterial);
   this.rim.rotation.x = Math.PI/2;
@@ -32,49 +32,49 @@ export function Soil() {
   this.stoneMoss = new THREE.Group();
   this.group.add(this.stoneMoss);
 
-  var bottomGeometry = new THREE.LatheGeometry( bottomPoints, 6 );
-  var bottomMaterial = new THREE.MeshLambertMaterial( { color: 0x917054 } );
-  this.bottom = new THREE.Mesh( bottomGeometry, bottomMaterial );
-  this.bottom.position.y = -.8;
-  this.bottom.castShadow = true;
+  // var bottomGeometry = new THREE.LatheGeometry(bottomPoints, 32);
+  // var bottomMaterial = new THREE.MeshLambertMaterial( { color: 0x917054 } );
+  // this.bottom = new THREE.Mesh( bottomGeometry, bottomMaterial );
+  // this.bottom.position.y = -.8;
+  // this.bottom.castShadow = true;
   //bottom.receiveShadow = true;
 
   this.group.add(this.top);
-  this.group.add(this.rim);
-  this.group.add(this.bottom);
+  // this.group.add(this.rim);
+  // this.group.add(this.bottom);
 
-  var material = new THREE.MeshLambertMaterial( {color: 0x423224} );
-
-  for (i = 0; i < 90; i++) {
-    var size = Math.random()*.7 + .25;
-    var geometry = new THREE.BoxGeometry(size, size, size);
-    var x = 1 + Math.random() * 6;
-    geometry.translate(x, 0, 0);
-    var clod = new THREE.Mesh(geometry, material);
-    clod.position.y = -3*(1+Math.cos(Math.PI/10*x))*Math.random() - .5;
-    clod.quaternion.setFromEuler(rotateAndTilt(Math.random() * 90, Math.random() * 360));
-    this.group.add(clod);
+  // var material = new THREE.MeshLambertMaterial( {color: 0x423224} );
+  //
+  // for (i = 0; i < 90; i++) {
+  //   var size = Math.random()*.7 + .25;
+  //   var geometry = new THREE.BoxGeometry(size, size, size);
+  //   var x = 1 + Math.random() * 6;
+  //   geometry.translate(x, 0, 0);
+    // var clod = new THREE.Mesh(geometry, material);
+    // clod.position.y = -3*(1+Math.cos(Math.PI/10*x))*Math.random() - .5;
+    // clod.quaternion.setFromEuler(rotateAndTilt(Math.random() * 90, Math.random() * 360));
+    // this.group.add(clod);
     //clod.castShadow = true;
-    clod.receiveShadow = true;
+    // clod.receiveShadow = true;
 
-  }
+  // }
 
   var stoneMaterial = new THREE.MeshLambertMaterial( {color: 0x656b59} );
   var mossMaterial = new THREE.MeshLambertMaterial( {color: 0x4d5e35} );
 
-  for (i = 0; i < 8; i++) {
-    var radius = Math.random() + .5;
+  for (i = 0; i < 80; i++) {
+    var radius = (Math.random() + .5)/4;
     var stoneGeometry = new THREE.SphereGeometry(radius, 8, 8 );
     var mossGeometry = new THREE.SphereGeometry(radius*.95, 8, 8);
 
-    x = 2 + Math.random() * 6.5;
+    var x = 3 + Math.random() * 6.5;
     stoneGeometry.translate(x, 0, 0);
     mossGeometry.translate(x, 0, 0);
 
     var stone = new THREE.Mesh( stoneGeometry, stoneMaterial );
     var moss = new THREE.Mesh(mossGeometry, mossMaterial);
 
-    stone.castShadow = true;
+    // stone.castShadow = true;
 
     var position = Math.cos(Math.PI/20*x);
     var eu = rotateAndTilt(Math.random() * 90, Math.random() * 360);
@@ -93,5 +93,6 @@ export function Soil() {
   }
 
   this.stoneMoss.position.y = .07;
-  this.group.scale.set(.05, .05, .05);
+  this.group.position.y = -.5;
+  this.group.scale.set(1, .5, 1);
 }
