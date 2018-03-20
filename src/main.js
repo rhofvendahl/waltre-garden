@@ -7,6 +7,20 @@ import { Soil } from './soil';
 import { Time } from './time';
 import { Waltre } from './waltre';
 
+import CoreNLP, { Properties, Pipeline, ConnectorServer } from 'corenlp';
+
+const connector = new ConnectorServer({ dsn: 'http://localhost:9000' });
+const props = new Properties({ annotators: 'tokenize,ssplit,lemma,pos,ner' });
+const pipeline = new Pipeline(props, 'English', connector);
+const sent = new CoreNLP.simple.Sentence('Hello world');
+pipeline.annotate(sent)
+  .then(sent => {
+    console.log(sent.words());
+    console.log(sent.nerTags());
+  })
+  .catch(err => {
+    console.log('err', err);
+  });
 
 $(document).ready(function() {
   var growthStart = true;
