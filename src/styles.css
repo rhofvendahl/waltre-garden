@@ -8,44 +8,79 @@ html, body {
   width: 400px;
   margin-left: -200px;
   left: 50%;
-  bottom: 40px;
+  top: 60%;
 }
 
-.chat-input * {
+.chat-ui * {
+  border-color: #474747;
   border-radius: 8px;
+}
+
+.chat-log {
+  height: 200px;
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+.chat-input {
+  font-size: 16px;
+}
+
+.form-control:focus {
   border-color: #474747;
 }
 
 .msg {
-  background-color: #FFFFFF;
   display: inline-block;
+  max-width: 95%;
+  word-wrap: break-word;
   padding: 6px;
-  margin-bottom: 1px;
-  border-radius: 8px;
-  /* border-color: #CFCFCF; */
+  margin-bottom: 2px;
   border-color: #474747;
   border-width: 1px;
   border-style: solid;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .msg-waltre {
-    color: #bf9a64;
+  background-color: #fffbf0;
+  border-color: #a69058;
 }
 
 .msg-user {
-  color: #5dab57;
-  float: right;
+  background-color: #f6fff2;
+  border-color: #83a86f;
+  text-align: right;
 }
 
-.switch {
-  margin-top: 10px;
+.alignRight {
+  text-align: right;
 }
 
-.chat-input {
-  display: inline-block;
+.newSpeaker {
   margin-top: 10px;
 }
 
 .glyphicon {
-  color: #474747;
+  color: #666666;
+}
+
+.btn {
+  background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #DDDDDD;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #888888;
 }

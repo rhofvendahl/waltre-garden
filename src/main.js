@@ -9,6 +9,27 @@ import { Waltre } from './waltre';
 
 
 $(document).ready(function() {
+  function displayMessage(wasUser, isUser, message) {
+    var outerClass = "";
+    if (isUser) outerClass += " class='alignRight'";
+
+    var innerClass = " class='msg";
+    if (wasUser != isUser) innerClass += " newSpeaker";
+    if (isUser) innerClass += " msg-user'";
+    else innerClass += " msg-waltre'";
+
+    $(".chat-log").append("<div" + outerClass + "><div" + innerClass + ">" + message + "</div></div>");
+  }
+
+  $(".chat-form").submit(function(event) {
+    event.preventDefault();
+    var userInput = $(".chat-input").val();
+    displayMessage(false, true, userInput);
+    displayMessage(true, true, userInput);
+    displayMessage(true, false, "echo: " + userInput);
+    $(".chat-input").val("");
+    $(".chat-log").scrollTop($(".chat-log")[0].scrollHeight);
+  });
   var growthStart = true;
 
   var time = new Time();
@@ -21,7 +42,7 @@ $(document).ready(function() {
   document.body.appendChild( renderer.domElement);
 
   var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 1.3, 4);
+  camera.position.set(0, 1.5, 6);
   // camera.lookAt(0, 8, 0);
 
   var scene = new THREE.Scene();
