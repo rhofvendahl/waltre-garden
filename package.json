@@ -40,5 +40,8 @@
     "three": "^0.91.0",
     "three-orbit-controls": "^82.1.0",
     "tween.js": "^16.6.0"
+  },
+  "engines": {
+    "node": "9.8.0"
   }
 }
