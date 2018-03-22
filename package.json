@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development",
-    "start": "npm run build; webpack-dev-server --open --mode development",
+    "build": "./node_modules/webpack/bin/webpack.js --mode development",
+    "start": "npm run build; ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --open --mode development",
     "lint": "eslint src/*.js",
     "fix": "eslint --fix src/*.js",
     "test": "karma start karma.conf.js"
