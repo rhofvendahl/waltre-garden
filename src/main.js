@@ -69,49 +69,49 @@ $(document).ready(function() {
   maple2.group.position.x = -1;
   maple2.group.position.y = -.2;
   maple2.group.position.z = -2;
-  maple2.group.scale.set(4,5,4);
+  maple2.group.scale.set(4,4,4);
   scene.add(maple2.group);
 
   //small farback
   maple3.group.position.x = 2;
   maple3.group.position.y = -.5;
   maple3.group.position.z = -7;
-  maple3.group.scale.set(3,4,3);
+  maple3.group.scale.set(3,3,3);
   scene.add(maple3.group);
 
   //medium backright
   maple4.group.position.x = 2.6;
   maple4.group.position.y = -.5;
   maple4.group.position.z = -3.3;
-  maple4.group.scale.set(3,4,3);
+  maple4.group.scale.set(3,3,3);
   scene.add(maple4.group);
 
   //medium back center
   maple7.group.position.x = -2;
   maple7.group.position.y = -.5;
   maple7.group.position.z = -5;
-  maple7.group.scale.set(4,5,4);
+  maple7.group.scale.set(4,4,4);
   scene.add(maple7.group);
 
   //small left
   maple1.group.position.x = -4;
   maple1.group.position.y = -.5;
   maple1.group.position.z = -4;
-  maple1.group.scale.set(3,4,3);
+  maple1.group.scale.set(3,3,3);
   scene.add(maple1.group);
 
   //small back left
   maple5.group.position.x = -4;
   maple5.group.position.y = -.5;
   maple5.group.position.z = -6;
-  maple5.group.scale.set(2.5,3,2.5);
+  maple5.group.scale.set(2.5,2.5,2.5);
   scene.add(maple5.group);
 
   //small back right
   maple6.group.position.x = 4;
   maple6.group.position.y = -.5;
   maple6.group.position.z = -6;
-  maple6.group.scale.set(2.5,3,2.5);
+  maple6.group.scale.set(2.5,2.5,2.5);
   scene.add(maple6.group);
 
   var soil = new Soil();
